@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function okno_zamknij_Radulski()
+                {
+                window.close()
+                }
+        </script>
+    </head>
+    <body>
+        <font style="color: green; font-size: 31px;">
+            <script>
+                var D1_RAD = parseInt(prompt("Podaj pierwszy dzień: "));
+                var D2_RAD = parseInt(prompt("Podaj drugi dzień: "));
+                if (D1_RAD < 1 || D1_RAD > 31 || D2_RAD > D1_RAD || D2_RAD > 31) {
+                    alert("Podane dni są niepoprawne.");
+                }else{
+                    var roznica = Math.abs((D2_RAD - D1_RAD) * 86400);
+                }
+                document.write("Różnica między tymi dniami wynosi: ", roznica, " sekund");
+            </script>
+        </font>
+        <input type="button" value="zamknij okno" onclick="okno_zamknij_Radulski()"/>
+    </body>
+</html>

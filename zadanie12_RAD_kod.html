@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function okno_zamknij_Radulski()
+                {
+                window.close()
+                }
+        </script>
+    </head>
+    <body>
+        HTML:<br>
+        <textarea rows="31" cols="100" style="overflow:hidden" readonly>
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function okno_zamknij_Radulski()
+                {
+                window.close()
+                }
+        </script>
+    </head>
+    <body>
+        <font style="color: green; font-size: 31px;">
+            <script>
+                var D1_RAD = parseInt(prompt("Podaj pierwszy dzień: "));
+                var D2_RAD = parseInt(prompt("Podaj drugi dzień: "));
+                var G1_RAD = parseInt(prompt("Podaj pierwszą godzine: "));
+                var G2_RAD = parseInt(prompt("Podaj drugą godzine: "));
+                if (D1_RAD < 1 || D1_RAD > 31 || D2_RAD > D1_RAD || D2_RAD > 31) {
+                    if (G1_RAD < 1 || G1_RAD > 24 || G2_RAD < 1 || G2_RAD > 24) {
+                    alert("Podane dni są niepoprawne.");
+                }}else{
+                    var roznicaD = Math.abs((D2_RAD - D1_RAD) * 86400);
+                    var roznicaG = Math.abs((G2_RAD - G1_RAD) * 3600);
+                    suma=roznicaD-roznicaG;
+                    } 
+                document.write("Różnica między tymi dniami i godzinami wynosi: ", suma, " sekund");
+            </script>
+        </font>
+        <input type="button" value="zamknij okno" onclick="okno_zamknij_Radulski()"/>
+    </body>
+</html>
+        </textarea>
+        <br><br>
+        <input type="button" value="zamknij okno" onclick="okno_zamknij_Radulski()"/>
+    </body>
+</html>
