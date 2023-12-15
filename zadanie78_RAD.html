@@ -2,6 +2,12 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <script>
+            function okno_zamknij_Radulski()
+            {
+            window.close()
+            }
+        </script>
     </head>
     <body>
         <b>Obiekt history</b>
@@ -22,5 +28,7 @@
         <b>window.history.go(n) -></b> pozwala przejść o kilka stron do przodu lub do tyłu naraz.<br>
         <b>window.history.go(-2); -></b> przejdzie dwie strony wstecz<br>
         <b>window.history.go(0); -></b> odświeży aktualną stronę
+        <br><br>
+        <input type="button" value="zamknij okno" onclick="okno_zamknij_Radulski()"/>
     </body>
 </html>

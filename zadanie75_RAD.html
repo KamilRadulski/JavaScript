@@ -4,6 +4,12 @@
         <meta charset="utf-8">
         <meta http-equiv="Content-Script-Type" content="text/javascript">
         <title>Moja strona WWW</title>
+        <script>
+            function okno_zamknij_Radulski()
+            {
+            window.close()
+            }
+        </script>
     </head>
     <body>
         <script type="text/javascript">
@@ -25,5 +31,7 @@
             document.write("URL dokumentu, z którego nastąpiło odwołanie do bieżącego dokumentu: ");
             document.write(document.referrer + "<br>");
         </script>
+        <br>
+        <input type="button" value="zamknij okno" onclick="okno_zamknij_Radulski()"/>
     </body>
 </html>
