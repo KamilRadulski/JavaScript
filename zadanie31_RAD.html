@@ -2,6 +2,22 @@
 <html lang="pl-PL">
     <head>
         <meta charset="utf-8">
+        <script type="text/javascript">
+            var autobus = 
+            {
+                ilu_pasazerow: '100',
+                ile_siedzen: '50',
+                max_predkosc: '80km/h',
+                autobus_wyswietl_Radulski: function ()
+                {
+                    document.write("Ilość pasażerów: " + this.ilu_pasazerow + "<br>" + "Ilość miejsc siedzących: " + this.ile_siedzen + "<br> Maksymalna prędkość: " + this.max_predkosc + "<br>")
+                }
+            }
+            autobus.autobus_wyswietl_Radulski();
+            autobus.rocznik=1998;
+            autobus.autobus_napisz_Radulski=function() {alert('Rocznik: ' + this.rocznik + ' rok')}
+            autobus.autobus_napisz_Radulski();
+        </script>
         <script>
             function okno_zamknij_Radulski()
             {
@@ -10,7 +26,16 @@
         </script>
     </head>
     <body>
-        
+        <br><br>
+        Programowanie obiektowe. <br>
+        Obiekt to autobus<br>
+        Pola:<br>
+        ilu_pasazerow<br>
+        ile_siedzen<br>
+        max_predkosc<br>
+        metoda: autobus_wyswietl_Radulski<br>
+        nowe pole to rocznik <br>
+        nowa metoda to autobus_napisz_Radulski();<br><br>
         <input type="button" value="zamknij okno" onclick="okno_zamknij_Radulski()"/>
     </body>
 </html>
