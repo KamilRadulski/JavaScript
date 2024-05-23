@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 44</title>
+    <script>
+        function okno_zamknij_Radulski()
+        {
+            window.close()
+        }
+    </script>
+    <style>
+        .tekst {
+            font-size: 42px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wynik"></div>
+
+    <script>
+        const nazwisko = "Radulski";
+        const imie = "Kamil";
+        const liczbaLiterNazwiska = nazwisko.length;
+        const iloscWyswietlen = (liczbaLiterNazwiska % 4) + 10;
+        const wielkoscLiter = (liczbaLiterNazwiska % 3) + 40;
+
+        const wynikDiv = document.getElementById('wynik');
+
+        for (let i = 1; i <= iloscWyswietlen; i++) {
+            let tekst = (i % 2 === 1) ? nazwisko : imie;
+            let p = document.createElement('p');
+            p.className = 'tekst';
+            p.style.fontSize = wielkoscLiter + 'px';
+            p.textContent = tekst;
+            wynikDiv.appendChild(p);
+        }
+    </script>
+    <br><br>
+    <input type="button" value="zamknij okno" onclick="okno_zamknij_Radulski()"/>
+</body>
+</html>

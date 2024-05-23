@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 43</title>
+    <script>
+        function okno_zamknij_Radulski()
+        {
+            window.close()
+        }
+    </script>
+</head>
+<body>
+    <div id="wynik"></div>
+    <script>
+        function wypiszLiczbyParzyste() {
+            const input = prompt('Podaj liczbę:');
+            const liczba = parseInt(input);
+            const wynikDiv = document.getElementById('wynik');
+            wynikDiv.innerHTML = ''; // Wyczyszczenie poprzednich wyników
+
+            if (isNaN(liczba) || liczba < 2) {
+                wynikDiv.innerHTML = '<p>Podaj poprawną liczbę większą lub równą 2.</p>';
+                return;
+            }
+
+            let wynik = '<p>Liczby parzyste od 2 do ' + liczba + ':</p>';
+            for (let i = 2; i <= liczba; i += 2) {
+                wynik += '<p>' + i + '</p>';
+            }
+
+            wynikDiv.innerHTML = wynik;
+        }
+
+        window.onload = wypiszLiczbyParzyste;
+    </script>
+    <br><br>
+    <input type="button" value="zamknij okno" onclick="okno_zamknij_Radulski()"/>
+</body>
+</html>

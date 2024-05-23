@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 54</title>
+    <script>
+        function okno_zamknij_Radulski()
+        {
+            window.close()
+        }
+    </script>
+</head>
+<body>
+    <div id="rysunek" class="gwiazdki"></div>
+
+    <script>
+        function rysujProstokat() {
+            const imie = prompt('Podaj swoje imię:');
+            const nazwisko = prompt('Podaj swoje nazwisko:');
+
+            const liczbaLiterImienia = imie.length;
+            const liczbaLiterNazwiska = nazwisko.length;
+
+            const a = (liczbaLiterNazwiska % 4) + 5;
+            const b = (liczbaLiterImienia % 6) + 20;
+
+            const rysunekDiv = document.getElementById('rysunek');
+            rysunekDiv.innerHTML = '';
+
+            let gornaLinia = '';
+            for (let i = 0; i < b; i++) {
+                gornaLinia += '*';
+            }
+            rysunekDiv.innerHTML += gornaLinia + '<br>';
+
+            for (let i = 0; i < a - 2; i++) {
+                let srodekLinia = '*';
+                for (let j = 0; j < b - 2; j++) {
+                    srodekLinia += '&nbsp;&nbsp;';
+                }
+                srodekLinia += '*';
+                rysunekDiv.innerHTML += srodekLinia + '<br>';
+            }
+
+            let dolnaLinia = '';
+            for (let i = 0; i < b; i++) {
+                dolnaLinia += '*';
+            }
+            rysunekDiv.innerHTML += dolnaLinia;
+        }
+
+        window.onload = rysujProstokat;
+    </script>
+    <br><br>
+    <input type="button" value="zamknij okno" onclick="okno_zamknij_Radulski()"/>
+</body>
+</html>

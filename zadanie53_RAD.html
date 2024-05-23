@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 53</title>
+    <script>
+        function okno_zamknij_Radulski()
+        {
+            window.close()
+        }
+    </script>
+</head>
+<body>
+    <div id="rysunek" class="gwiazdki"></div>
+
+    <script>
+        function rysujProstokat() {
+            const a_RAD = parseInt(prompt('Podaj wysokość prostokąta (a):'));
+            const b_RAD = parseInt(prompt('Podaj szerokość prostokąta (b):'));
+
+            if (isNaN(a_RAD) || isNaN(b_RAD) || a_RAD < 2 || b_RAD < 2) {
+                alert('Podaj poprawne wymiary większe lub równe 2.');
+                return;
+            }
+
+            const rysunekDiv = document.getElementById('rysunek');
+            rysunekDiv.innerHTML = '';
+
+            let gornaLinia = '';
+            for (let i = 0; i < b_RAD; i++) {
+                gornaLinia += '*';
+            }
+            rysunekDiv.innerHTML += gornaLinia + '<br>';
+
+            let wiersz_RAD = '*';
+            for (let i = 1; i <= (b_RAD - 2); i++) {
+                wiersz_RAD += '&nbsp;&nbsp;';
+            }
+            wiersz_RAD += '*';
+            for (let i = 1; i <= (a_RAD - 2); i++) {
+                rysunekDiv.innerHTML += wiersz_RAD + '<br>';
+            }
+
+            let dolnaLinia = '';
+            for (let i = 0; i < b_RAD; i++) {
+                dolnaLinia += '*';
+            }
+            rysunekDiv.innerHTML += dolnaLinia;
+        }
+
+        window.onload = rysujProstokat;
+    </script>
+    <br><br>
+    <input type="button" value="zamknij okno" onclick="okno_zamknij_Radulski()"/>
+</body>
+</html>
