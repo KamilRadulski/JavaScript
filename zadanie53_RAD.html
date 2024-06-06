@@ -16,37 +16,37 @@
 
     <script>
         function rysujProstokat() {
-            const a_RAD = parseInt(prompt('Podaj wysokość prostokąta (a):'));
-            const b_RAD = parseInt(prompt('Podaj szerokość prostokąta (b):'));
+            var a_RAD = parseInt(prompt('Podaj wysokość prostokąta (a):'));
+            var b_RAD = parseInt(prompt('Podaj szerokość prostokąta (b):'));
 
             if (isNaN(a_RAD) || isNaN(b_RAD) || a_RAD < 2 || b_RAD < 2) {
                 alert('Podaj poprawne wymiary większe lub równe 2.');
                 return;
             }
 
-            const rysunekDiv = document.getElementById('rysunek');
-            rysunekDiv.innerHTML = '';
+            var rysunek_RAD = document.getElementById('rysunek');
+            rysunek_RAD.innerHTML = '';
 
-            let gornaLinia = '';
-            for (let i = 0; i < b_RAD; i++) {
-                gornaLinia += '*';
+            var gornaLinia_RAD = '';
+            for (var i = 0; i < b_RAD; i++) {
+                gornaLinia_RAD += '*';
             }
-            rysunekDiv.innerHTML += gornaLinia + '<br>';
+            rysunek_RAD.innerHTML += gornaLinia_RAD + '<br>';
 
-            let wiersz_RAD = '*';
-            for (let i = 1; i <= (b_RAD - 2); i++) {
+            var wiersz_RAD = '*';
+            for (var i = 1; i <= (b_RAD - 2); i++) {
                 wiersz_RAD += '&nbsp;&nbsp;';
             }
             wiersz_RAD += '*';
-            for (let i = 1; i <= (a_RAD - 2); i++) {
-                rysunekDiv.innerHTML += wiersz_RAD + '<br>';
+            for (var i = 1; i <= (a_RAD - 2); i++) {
+                rysunek_RAD.innerHTML += wiersz_RAD + '<br>';
             }
 
-            let dolnaLinia = '';
-            for (let i = 0; i < b_RAD; i++) {
-                dolnaLinia += '*';
+            var dolnaLinia_RAD = '';
+            for (var i = 0; i < b_RAD; i++) {
+                dolnaLinia_RAD += '*';
             }
-            rysunekDiv.innerHTML += dolnaLinia;
+            rysunek_RAD.innerHTML += dolnaLinia_RAD;
         }
 
         window.onload = rysujProstokat;

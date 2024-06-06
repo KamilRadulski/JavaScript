@@ -16,35 +16,35 @@
 
     <script>
         function rysujProstokat() {
-            const imie = prompt('Podaj swoje imię:');
-            const nazwisko = prompt('Podaj swoje nazwisko:');
+            var imie = prompt('Podaj swoje imię:');
+            var nazwisko = prompt('Podaj swoje nazwisko:');
 
-            const liczbaLiterImienia = imie.length;
-            const liczbaLiterNazwiska = nazwisko.length;
+            var liczbaLiterImienia = imie.length;
+            var liczbaLiterNazwiska = nazwisko.length;
 
-            const a = (liczbaLiterNazwiska % 4) + 5;
-            const b = (liczbaLiterImienia % 6) + 20;
+            var a = (liczbaLiterNazwiska % 4) + 5;
+            var b = (liczbaLiterImienia % 6) + 20;
 
-            const rysunekDiv = document.getElementById('rysunek');
+            var rysunekDiv = document.getElementById('rysunek');
             rysunekDiv.innerHTML = '';
 
-            let gornaLinia = '';
-            for (let i = 0; i < b; i++) {
+            var gornaLinia = '';
+            for (var i = 0; i < b; i++) {
                 gornaLinia += '*';
             }
             rysunekDiv.innerHTML += gornaLinia + '<br>';
 
-            for (let i = 0; i < a - 2; i++) {
-                let srodekLinia = '*';
-                for (let j = 0; j < b - 2; j++) {
+            for (var i = 0; i < a - 2; i++) {
+                var srodekLinia = '*';
+                for (var j = 0; j < b - 2; j++) {
                     srodekLinia += '&nbsp;&nbsp;';
                 }
                 srodekLinia += '*';
                 rysunekDiv.innerHTML += srodekLinia + '<br>';
             }
 
-            let dolnaLinia = '';
-            for (let i = 0; i < b; i++) {
+            var dolnaLinia = '';
+            for (var i = 0; i < b; i++) {
                 dolnaLinia += '*';
             }
             rysunekDiv.innerHTML += dolnaLinia;
